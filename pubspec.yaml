@@ -39,6 +39,7 @@ dependencies:
   logger:
   provider:
   http:
+  scrollable_positioned_list:
 
 
 dev_dependencies:

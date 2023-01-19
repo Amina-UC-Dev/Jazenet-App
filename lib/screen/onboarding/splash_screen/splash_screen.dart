@@ -2,7 +2,9 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:jazenet_app/const/colors.dart';
 import 'package:jazenet_app/const/styles.dart';
+import 'package:jazenet_app/provider/provider.dart';
 import 'package:jazenet_app/screen/home/home_screen/home_screen.dart';
+import 'package:provider/provider.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -20,6 +22,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   timer() async {
     Timer(const Duration(seconds: 3), () async {
+      Provider.of<HomeProvider>(context,listen: false).getData(context);
       Navigator.pushNamedAndRemoveUntil(
           context, HomeScreen.routeName, (route) => false);
     });
